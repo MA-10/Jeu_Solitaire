@@ -7,20 +7,20 @@ public class Jeu {
 
 
 {
-	int nbr=0;//nombre de solutions trouvés
-	// 1) On va étudier les mouvements possibles du pioche vers la zone1 : 
+	int nbr=0;//nombre de solutions trouvÃ©s
+	// 1) On va Ã©tudier les mouvements possibles du pioche vers la zone1 : 
 	if(p.p2.est_vide()==false)
 	{
 	for(int i=0;i<4;i++)
 	{
 	   if(z1.mouvement_possible(p.p2.sommet(),i))
 	   {
-	       System.out.println("Pioche -->Tas n°"+(i+1)+" de la zone1");nbr++;
+	       System.out.println("Pioche -->Tas nÂ°"+(i+1)+" de la zone1");nbr++;
 	   }
 	      
 	}
 	}
-	// 2)On va étudier les mouvements possibles de la zone2 vers la zone1:
+	// 2)On va Ã©tudier les mouvements possibles de la zone2 vers la zone1:
 	for(int i=0;i<7;i++)
 	{
 	   if(z2.tab[i].est_vide()==false)
@@ -29,12 +29,12 @@ public class Jeu {
 	   { 
 	          if(z1.mouvement_possible(z2.tab[i].sommet(),j))
 	   {
-	       System.out.println("Tas n°"+(i+1)+" de la zone2 --> tas n° "+(j+1)+" de la zone1");nbr++;
+	       System.out.println("Tas nÂ°"+(i+1)+" de la zone2 --> tas nÂ° "+(j+1)+" de la zone1");nbr++;
 	   }
 	   }
 	   }
 	}
-	// 3)On va étudier les mouvements possibles de la zone1 vers la zone2:
+	// 3)On va Ã©tudier les mouvements possibles de la zone1 vers la zone2:
 	 for(int i=0;i<4;i++)
 	{
 	   if(z1.Tab[i].est_vide()==false)
@@ -43,24 +43,24 @@ public class Jeu {
 	   { 
 	          if(z2.mouvement_possible(z1.Tab[i].sommet(),j))
 	   {
-	       System.out.println("Tas n°"+(i+1)+" de la zone1 --> tas n° "+(j+1)+" de la zone2");nbr++;
+	       System.out.println("Tas nÂ°"+(i+1)+" de la zone1 --> tas nÂ° "+(j+1)+" de la zone2");nbr++;
 	   }
 	   }
 	   }
 	}
-	// 4) On va étudier les mouvements possibles du pioche vers la zone2 : 
+	// 4) On va Ã©tudier les mouvements possibles du pioche vers la zone2 : 
 	if(p.p2.est_vide()==false)
 	{
 	for(int i=0;i<7;i++)
 	{
 	   if(z2.mouvement_possible(p.p2.sommet(),i))
 	   {
-	       System.out.println("Pioche -->Tas n°"+(i+1)+" de la zone2");nbr++;
+	       System.out.println("Pioche -->Tas nÂ°"+(i+1)+" de la zone2");nbr++;
 	   }
 	      
 	}
 	}
-	// 3)On va étudier les mouvements possibles à l'intérieur de la zone2:
+	// 3)On va Ã©tudier les mouvements possibles Ã  l'intÃ©rieur de la zone2:
 	
 	    for(int i=0;i<7;i++)
 	    {
@@ -71,7 +71,7 @@ public class Jeu {
 	                  for(int k=0;k<7;k++)
 	                      {
 	                	     if(k!=i &&z2.mouvement_possible(z2.tab[i].tab[j],k))
-	                         {System.out.println("Tas n°"+(i+1)+" de la zone 2,à partir de la carte n°"+(j+1)+" vers le tas n°"+(k+1)+" de la zone2.");nbr++;}
+	                         {System.out.println("Tas nÂ°"+(i+1)+" de la zone 2,Ã  partir de la carte nÂ°"+(j+1)+" vers le tas nÂ°"+(k+1)+" de la zone2.");nbr++;}
 	                      }
 
 	             }
@@ -82,7 +82,7 @@ public class Jeu {
 }
 	public static int nbre_mouvement(Pioche p,Zone1 z1,Zone22 z2)
 	{
-		int nbr=0;//nombre de solutions trouvés
+		int nbr=0;//nombre de solutions trouvÃ©s
 		 
 		if(p.p2.est_vide()==false)
 		{
@@ -156,7 +156,7 @@ public class Jeu {
 		    
 		
 	}
-	public static boolean jeu_bloqué(Pioche p,Zone1 z1,Zone22 z2)
+	public static boolean jeu_bloquÃ©(Pioche p,Zone1 z1,Zone22 z2)
 	{
 		int t=p.p1.taille+p.p2.taille+1;
 		int n=0;
@@ -259,7 +259,7 @@ public class Jeu {
 					System.out.println("Entrer numero de pile :");
 					Scanner scanner3=new Scanner(System.in);
 					int col=scanner3.nextInt();
-					if(p.déplacer_zone1(col, z1))
+					if(p.dÃ©placer_zone1(col, z1))
 					{
 						move++;
 						score+=10;
@@ -270,7 +270,7 @@ public class Jeu {
 					System.out.println("Entrer numero de pile :");
 					Scanner scanner4=new Scanner(System.in);
 					int col=scanner4.nextInt();
-					if(p.déplacer_zone2(col, z2))
+					if(p.dÃ©placer_zone2(col, z2))
 					{
 						move++;
 						score+=2;
@@ -302,7 +302,7 @@ public class Jeu {
 				}
 				break;
 			case 5:
-				System.out.println("Entrer numero de pile de la/les carte à deplacer | sa position | la pile finale : ");
+				System.out.println("Entrer numero de pile de la/les carte Ã  deplacer | sa position | la pile finale : ");
 				Scanner scanner7=new Scanner(System.in);
 				int col1=scanner7.nextInt();
 				int pos=scanner7.nextInt();
@@ -327,17 +327,17 @@ public class Jeu {
 			}
 			
 			
-			if (z1.est_terminé()==true)
+			if (z1.est_terminÃ©()==true)
 			{
-				System.out.println("Félicitation ! Vous avez gagné.");
+				System.out.println("FÃ©licitation ! Vous avez gagnÃ©.");
+				System.out.println("Votre Score est "+score);
 				System.exit(-1);
 			}
-			if(jeu_bloqué(p,z1,z2))
+			if(jeu_bloquÃ©(p,z1,z2))
 			{
 				System.out.println("0-Quitter\t1-Permutter");
 				Scanner scanner9=new Scanner(System.in);
 				int i=scanner9.nextInt();
-				scanner9.close();
 				switch(i)
 				{
 				case 0:
